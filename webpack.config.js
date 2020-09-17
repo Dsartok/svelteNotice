@@ -17,10 +17,14 @@ module.exports = {
     publicPath: "/build",
     compress: true,
     port: 3020,
-    hot: true,
+    hot: false,
   },
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
       {
         test: /\.svelte$/,
         use: {
